@@ -19,9 +19,9 @@ export default function Home() {
         />
         <Car
           imgUrl={"https://i.ibb.co/xf9fjKW/car400.png"}
-          Reg="KCA 001H"
-          Type="Honda-Fit"
-          CurrentMileage={10000}
+          Reg="KBC 897X"
+          Type="Honda-Insight"
+          CurrentMileage={67896}
           Status={"Due"}
         />
       </div>
