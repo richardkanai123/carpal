@@ -3,39 +3,50 @@ import { GiPathDistance } from "react-icons/gi";
 import { GoSettings } from "react-icons/go";
 import { FaOilCan, FaAirFreshener } from "react-icons/fa";
 const CarDetails = ({
-  carReg,
+  Reg,
   currentMilage,
   serviceStatus,
   lastOilChangeMilage,
-  lastOilChangeDate,
   lastOilUsed,
   nextOilChangeMilage,
   lastOilFilterChangeMilage,
-  lastOilFilterChangeDate,
   nextOilFilterChangeMilage,
   lastAirFilterMileageChange,
   nextAirFilterMilageChange,
 }) => {
   return (
-    <div className="sm:w-full flex flex-col justify-center p-2 gap-2 shadow-sm  md:w-350 lg:max-w-sm sm:min-h-full h-fit bg-yellow-100 text-center  rounded-lg items-center ">
-      <div className=" font-bold text-sky-800 border-b border-3 flex flex-col gap-2">
-        <h3 className="text-2xl">{carReg}KBC 001H</h3>
-        <p className="text-xl font-semibold text-sky-900 flex justify-center align-middle items-center gap-2">
-          Mileage
-          <GiPathDistance className="text-lime-400" />:{currentMilage} 67872
+    <div className="flex flex-col justify-center align-middle items-center p-3 w-full md:w-3/4 lg:w-500 bg-yellow-100 rounded-xl">
+      <div className="w-full p-1  flex flex-col text-center items-center justify-center gap-2 mb-3 align-middle mx-auto border-b-4">
+        <h4 className="text-4xl font-bold text-sky-800 mb-2 border-b-2">
+          {Reg} KCA 001H
+        </h4>
+        <p className="text-2xl font-semibold flex items-center text-center text-sky-600 gap-2 ">
+          <GiPathDistance />
+          :12000 {currentMilage}
         </p>
-
-        <p className="text-center text-cyan-900 font-bold text-lg flex justify-center items-center align-middle gap-1 ">
-          <GoSettings /> Service Status: {serviceStatus} Due
+        <p className="text-2xl font-semibold flex items-center text-center text-sky-600 gap-2">
+          <GoSettings />: Ok{serviceStatus}
         </p>
       </div>
 
-      <div className="flex w-full justify-around items-center align-middle flex-wrap text-center gap-1">
-        <div className=" w-full md:w-1/2 p-1 mt-2 border-b-2 opacity-95">
-          <FaOilCan />
+      <div className="min-w-full flex flex-col  items-center justify-around align-middle p-1 gap-2">
+        <div className="sm:w-full flex-1 text-center rounded-lg shadow-xl flex flex-col items-center justify-center gap-2 p-3">
+          <FaOilCan className="text-4xl text-red-400 shadow-sm m-auto self-center items-center" />
+          <p className="w-full flex flex-row gap-2 items-center justify-between text-center text-base font-semibold text-sky-600 border-b-2 border-sky-50 p-1 ">
+            Prev. Oil Change at:
+            {lastOilChangeMilage}10000Km
+          </p>
+          <p className="w-full flex flex-row gap-2 items-center justify-between text-center text-base font-semibold text-sky-600 border-b-2 border-sky-100 p-1">
+            Prev. Oil Used:
+            {lastOilUsed}Castrol
+          </p>
+          <p className="w-full flex flex-row gap-2 items-center justify-between text-center text-base font-semibold text-sky-600 border-b-2 border-sky-200 p-1">
+            Next Oil Change {"approx"} at:
+            {nextOilFilterChangeMilage}km
+          </p>
         </div>
-        <div className=" w-full md:w-1/2 p-1 mt-2 border-b-2 opacity-95">
-          <FaAirFreshener />
+        <div className="sm:w-full md:w-1/2 flex-1 text-center">
+          <FaAirFreshener className="text-2xl m-auto self-center items-center" />
         </div>
       </div>
     </div>

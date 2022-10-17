@@ -4,7 +4,11 @@ import Link from "next/link";
 
 const Car = ({ imgUrl, Type, Reg, CurrentMileage, Status }) => {
   return (
-    <Link href={`/Cardetails/${Reg}`} className=" opacity-80 p-1  shadow-lg ">
+    <Link
+      href={`/Cardetails/${Reg}`}
+      className=" opacity-80 p-1  shadow-lg "
+      key={Reg}
+    >
       <div className="h-300 w-350 flex flex-col p-5 align-middle cursor-pointer transition-all hover:opacity-100 hover:-translate-x-1 bg-yellow-50 rounded-xl justify-center text-center">
         <div className="object-cover w-48 mx-auto mb-4  ">
           <Image
